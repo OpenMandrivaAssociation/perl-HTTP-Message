@@ -1,9 +1,9 @@
 %define upstream_name    HTTP-Message
-%define upstream_version 6.02
+%define upstream_version 6.03
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 4
+Release:    %mkrel 1
 
 Summary:    Base class for Request/Response
 License:    GPL+ or Artistic
