@@ -1,34 +1,32 @@
-%define upstream_name    HTTP-Message
-%define upstream_version 6.03
+%define modname	HTTP-Message
+%define modver	6.03
 
-Name:       perl-%{upstream_name}
-Version:    %perl_convert_version %{upstream_version}
-Release:    3
-
-Summary:    Base class for Request/Response
-License:    GPL+ or Artistic
-Group:      Development/Perl
-Url:        http://search.cpan.org/dist/%{upstream_name}
-Source0:    http://www.cpan.org/modules/by-module/HTTP/%{upstream_name}-%{upstream_version}.tar.gz
-
-BuildRequires: perl(Compress::Raw::Zlib)
-BuildRequires: perl(Encode)
-BuildRequires: perl(Encode::Locale)
-BuildRequires: perl(HTML::Parser)
-BuildRequires: perl(HTTP::Date)
-BuildRequires: perl(IO::Compress::Bzip2)
-BuildRequires: perl(IO::Compress::Deflate)
-BuildRequires: perl(IO::Compress::Gzip)
-BuildRequires: perl(IO::Uncompress::Bunzip2)
-BuildRequires: perl(IO::Uncompress::Gunzip)
-BuildRequires: perl(IO::Uncompress::Inflate)
-BuildRequires: perl(IO::Uncompress::RawInflate)
-BuildRequires: perl(LWP::MediaTypes)
-BuildRequires: perl(MIME::Base64)
-BuildRequires: perl(MIME::QuotedPrint)
-BuildRequires: perl(URI)
-BuildRequires: perl-devel
-BuildArch: noarch
+Summary:	Base class for Request/Response
+Name:		perl-%{modname}
+Version:	%perl_convert_version %{modver}
+Release:	3
+License:	GPLv2+ or Artistic
+Group:		Development/Perl
+Url:		http://search.cpan.org/dist/%{modname}
+Source0:	http://www.cpan.org/modules/by-module/HTTP/%{modname}-%{modver}.tar.gz
+BuildArch:	noarch
+BuildRequires:	perl(Compress::Raw::Zlib)
+BuildRequires:	perl(Encode)
+BuildRequires:	perl(Encode::Locale)
+BuildRequires:	perl(HTML::Parser)
+BuildRequires:	perl(HTTP::Date)
+BuildRequires:	perl(IO::Compress::Bzip2)
+BuildRequires:	perl(IO::Compress::Deflate)
+BuildRequires:	perl(IO::Compress::Gzip)
+BuildRequires:	perl(IO::Uncompress::Bunzip2)
+BuildRequires:	perl(IO::Uncompress::Gunzip)
+BuildRequires:	perl(IO::Uncompress::Inflate)
+BuildRequires:	perl(IO::Uncompress::RawInflate)
+BuildRequires:	perl(LWP::MediaTypes)
+BuildRequires:	perl(MIME::Base64)
+BuildRequires:	perl(MIME::QuotedPrint)
+BuildRequires:	perl(URI)
+BuildRequires:	perl-devel
 
 %description
 An 'HTTP::Config' object is a list of entries that can be matched against
@@ -42,7 +40,7 @@ hold user data.
 The following methods are provided:
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -qn %{modname}-%{modver}
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor
@@ -57,30 +55,6 @@ The following methods are provided:
 
 %files
 %doc Changes META.yml README
+%{perl_vendorlib}/*
 %{_mandir}/man3/*
-%perl_vendorlib/*
-
-
-
-
-%changelog
-* Tue Feb 21 2012 Götz Waschk <waschk@mandriva.org> 6.30.0-1mdv2012.0
-+ Revision: 778602
-- update to new version 6.03
-
-* Sun Jan 22 2012 Oden Eriksson <oeriksson@mandriva.com> 6.20.0-4
-+ Revision: 765364
-- rebuilt for perl-5.14.2
-
-* Sat Jan 21 2012 Oden Eriksson <oeriksson@mandriva.com> 6.20.0-3
-+ Revision: 763866
-- rebuilt for perl-5.14.x
-
-* Fri Jan 20 2012 Oden Eriksson <oeriksson@mandriva.com> 6.20.0-2
-+ Revision: 763076
-- rebuild
-
-* Tue May 03 2011 Guillaume Rousse <guillomovitch@mandriva.org> 6.20.0-1
-+ Revision: 664977
-- import perl-HTTP-Message
 
