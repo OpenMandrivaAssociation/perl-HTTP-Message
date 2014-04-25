@@ -1,2 +1,4 @@
+removed_sources:
+  HTTP-Message-6.03.tar.gz: ffd90daf91d07b0c58a3ec4544c79416d4968ebc
 sources:
-  "HTTP-Message-6.03.tar.gz": ffd90daf91d07b0c58a3ec4544c79416d4968ebc
+  HTTP-Message-6.06.tar.gz: 4a88688c28e6581fab9b2eca8d0e320e96bef1ad
