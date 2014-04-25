@@ -12,6 +12,7 @@ Url:		http://search.cpan.org/dist/%{modname}
 Source0:	http://www.cpan.org/modules/by-module/HTTP/%{modname}-%{modver}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Compress::Raw::Zlib)
+BuildRequires: perl(IO::HTML)
 BuildRequires:	perl(Encode)
 BuildRequires:	perl(Encode::Locale)
 BuildRequires:	perl(HTML::Parser)
