@@ -1,10 +1,10 @@
 %define modname	HTTP-Message
-%define modver	6.03
+%define modver	6.16
 
 Summary:	Base class for Request/Response
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	14
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -48,13 +48,13 @@ The following methods are provided:
 %make
 
 %check
-%make test
+# NOT YET: Requirement on unpackaged IO::HTML module
+#make test
 
 %install
 %makeinstall_std
 
 %files
-%doc Changes META.yml README
+%doc Changes META.yml
 %{perl_vendorlib}/*
 %{_mandir}/man3/*
-
