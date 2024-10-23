@@ -1,14 +1,13 @@
 %define modname	HTTP-Message
-%define modver	6.16
 
 Summary:	Base class for Request/Response
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	3
+Version:	7.00
+Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	http://www.cpan.org/modules/by-module/HTTP/%{modname}-%{modver}.tar.gz
+Url:		https://metacpan.org/pod/HTTP::Message
+Source0:	http://www.cpan.org/modules/by-module/HTTP/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
 BuildRequires:	perl(Compress::Raw::Zlib)
 BuildRequires:	perl(Encode)
@@ -40,19 +39,20 @@ hold user data.
 The following methods are provided:
 
 %prep
-%setup -qn %{modname}-%{modver}
+%autosetup -p1 -n %{modname}-%{version}
 
-%build
+%conf
 %__perl Makefile.PL INSTALLDIRS=vendor
 
-%make
+%build
+%make_build
 
 %check
 # NOT YET: Requirement on unpackaged IO::HTML module
 #make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc Changes META.yml
