@@ -9,6 +9,7 @@ Group:		Development/Perl
 Url:		https://metacpan.org/pod/HTTP::Message
 Source0:	http://www.cpan.org/modules/by-module/HTTP/%{modname}-%{version}.tar.gz
 BuildArch:	noarch
+BuildRequires:	make
 BuildRequires:	perl(Compress::Raw::Zlib)
 BuildRequires:	perl(Encode)
 BuildRequires:	perl(Encode::Locale)
