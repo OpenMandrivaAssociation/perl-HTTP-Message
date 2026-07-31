@@ -2,7 +2,7 @@
 
 Summary:	Base class for Request/Response
 Name:		perl-%{modname}
-Version:	7.00
+Version:	7.04
 Release:	1
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
@@ -40,7 +40,7 @@ hold user data.
 The following methods are provided:
 
 %prep
-%autosetup -p1 -n %{modname}-%{version}
+%autosetup -p1 -n HTTP-Message-7.04
 
 %conf
 %__perl Makefile.PL INSTALLDIRS=vendor
